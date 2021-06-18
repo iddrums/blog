@@ -25,8 +25,8 @@
                             </div>
                         </header>
 
-                        <div class="text-sm mt-2">
-                            {{ $post->body }}
+                        <div class="space-y-4 lg:text-lg leading-loose text-sm mt-2">
+                            {!! $post->body !!}
                         </div>
 
                         <footer class="flex justify-between items-center mt-8">
