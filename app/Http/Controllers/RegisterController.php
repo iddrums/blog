@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -26,6 +27,8 @@ class RegisterController extends Controller
        $user = User::create($attributes);
 
         auth()->login($user);
+
+        // Auth()->login($user);
 
         return redirect('/')->with('success', 'Your account has been credited.');
     }
