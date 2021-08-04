@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Category;
+use Illuminate\Support\Facades\Response;
 
 class PostController extends Controller
 {
@@ -12,7 +13,7 @@ class PostController extends Controller
            return view('posts.index', [
             'posts' => Post::latest()->filter(
                           request(['search', 'category', 'author'])
-                     )->paginate(6)->withQueryString()
+                     )->paginate(18)->withQueryString()
            ]);
     }
 
@@ -21,6 +22,15 @@ class PostController extends Controller
         return view('posts.show', [
             'post' => $post
         ]);
+    }
+
+    public function create()
+    {
+        // if (auth()->guest()) {
+        //     abort(403);
+        // }
+
+        return view('posts.create');
     }
 
 }
