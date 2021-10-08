@@ -46,6 +46,8 @@ Route::middleware('can:admin')->group(function () {
 // Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy']);
 });
 
+//implementing laravel document
+Route::redirect('/here', '/there', 404);
 
 
 
